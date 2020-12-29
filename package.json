@@ -1,0 +1,62 @@
+{
+  "name": "egt-vereinsbot",
+  "description": "Vereinsbot für Elysium Gaming Tübingen e.V.",
+  "version": "0.1.0",
+  "author": "Frédéric Bolvin @Fensterbank",
+  "bin": {
+    "egt-vereinsbot": "./bin/run"
+  },
+  "bugs": "https://github.com/Fensterbank/egt-vereinsbot/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "date-fns": "^2.16.1",
+    "discord.js": "^12.5.1",
+    "lodash": "^4.17.20",
+    "node-fetch": "^2.6.1",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/tslint": "^3",
+    "@types/lodash": "^4.14.166",
+    "@types/node": "^10",
+    "@types/node-fetch": "^2.5.7",
+    "globby": "^10",
+    "ts-node": "^8",
+    "tslint": "^5",
+    "typescript": "^3.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/Fensterbank/egt-vereinsbot",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "egt-vereinsbot",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "Fensterbank/egt-vereinsbot",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "tslint -p . -t stylish",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
