@@ -19,5 +19,16 @@ EASYVEREIN_TOKEN=easyverein-api-token BOT_TOKEN=discord-bot-token ./bin/run bot
 ```
 Eventually you will handle this with [pm2](https://pm2.keymetrics.io/) since the bot should always run.
 
-# Commands
+# CLI Commands
 * egt-vereinsbot bot
+
+# Bot Commands
+`!egt hi|hallo|moin|...`  
+Just a random greeting.  
+![Screenshot Random Greeting](./docs/screenshot-greeting.png)
+
+
+`!egt whoami`  
+Shows user's membership information resolved from EasyVerein API.  
+![Screenshot WhoAmI command](./docs/screenshot-whoami.png)
+
