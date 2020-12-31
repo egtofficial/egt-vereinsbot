@@ -28,7 +28,18 @@ Just a random greeting.
 ![Screenshot Random Greeting](./docs/screenshot-greeting.png)
 
 
-`!egt whoami`  
+`!egt whoami|info [discordTag?]`  
 Shows user's membership information resolved from EasyVerein API.  
 ![Screenshot WhoAmI command](./docs/screenshot-whoami.png)
+
+___
+In case of an unknown command, the bot will respond with a command overview:
+
+```
+    !egt whoami                  Zeigt deine EGT-Mitgliederinformationen an  
+    !egt info  
+
+    !egt info Discordtag#1234    Zeigt die Mitgliederinformationen der Person an  
+                                 Zugriff auf die Mitgliederkartei notwendig.
+```
 
