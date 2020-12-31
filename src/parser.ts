@@ -12,7 +12,7 @@ export const processMessage = async (message: Message) => {
   const args = messageString.replace(cmd, '').trim();
   console.log(blue(`Incoming command: ${cmd}`), args ? `=> ${args}` : '');
 
-  if (find(cmd, (w) => genericHelloWords.includes(w.toLowerCase()))) {
+  if (genericHelloWords.includes(cmd.toLowerCase())) {
     message.channel.send((sample(genericHelloReplies) as string).replace('{username}', message.author.username));
     return;
   }
