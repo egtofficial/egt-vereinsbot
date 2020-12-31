@@ -3,6 +3,7 @@ import { find, sample, words } from 'lodash'
 import { genericFallbackReplies, genericHelloReplies, genericHelloWords, prefix } from './constants'
 import { info } from './intents';
 import { blue } from 'colors/safe';
+import { wait } from './lib/utils';
 
 
 export const processMessage = async (message: Message) => {
@@ -16,9 +17,18 @@ export const processMessage = async (message: Message) => {
     return;
   }
 
-  if (['whoami', 'werbinich', 'info'].includes(cmd))
+  if (['whoami', 'info'].includes(cmd))
     return info(message, args);
 
   message.channel.send(sample(genericFallbackReplies) as string);
-  return;
+  return wait(2000).then(() => {
+    message.channel.send(`**Mögliche Befehle:**  
+    \`\`\`  
+    !egt whoami                  Zeigt deine EGT-Mitgliederinformationen an  
+    !egt info  
+
+    !egt info Discordtag#1234    Zeigt die Mitgliederinformationen der Person an  
+                                 Zugriff auf die Mitgliederkartei notwendig.
+    \`\`\``)
+  })
 }

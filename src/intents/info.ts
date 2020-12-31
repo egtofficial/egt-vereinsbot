@@ -33,7 +33,7 @@ export const info = async (message: Message, name?: string) => {
         return wait(3000);
       })
       .then(() => {
-        message.channel.send(`Entweder bist du noch gar kein Mitglied (das sollten wir dann unbedingt ändern!) oder wir haben auf deiner Akte das Post-it mit deinem Discordtag **${authorDiscordTag}** vergessen. 🤔`);
+        message.channel.send(`Entweder bist du noch gar kein Mitglied (das sollten wir dann unbedingt ändern!) oder wir haben auf deiner Akte das Post-it mit deinem Discordtag \`${authorDiscordTag}\` vergessen. 🤔`);
         return wait(5000);
       })
       .then(() => {
@@ -114,7 +114,7 @@ export const info = async (message: Message, name?: string) => {
         message.channel.send(
           `__**Kleiner Servicehinweis:**__   
 Dein serverübergreifend öffentlich sichtbarer Discord-Username ist \`${message.author.username}\`, dein einzigartiger Discord-Tag ist \`${authorDiscordTag}\`.  
-Ich gehe davon aus, dass es tatsächlich ein Versehen war, dass du nun deinen Vornamen in deinem öffentlichen Username hast.  
+Ich gehe davon aus, dass es tatsächlich ein Versehen war, dass du nun deinen Vornamen in deinem öffentlichen Username hast. Keine Sorge, das ist hier vielen passiert… 🤦    
 Du kannst über das Servermenü jederzeit deinen *innerhalb des EGT-Servers* sichtbaren Anzeigenamen ändern, ohne deinen globalen Username anzufassen.`);
       }
     })
