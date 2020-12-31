@@ -2,6 +2,7 @@ import { Command, flags } from '@oclif/command'
 import { Client } from 'discord.js'
 import { prefix } from '../constants';
 import { processMessage } from '../parser';
+const pjson = require('../../package.json');
 
 export default class Roles extends Command {
   static description = 'describe the command here'
@@ -23,6 +24,6 @@ export default class Roles extends Command {
 
       processMessage(message);
     });
-    this.log('Bot started…')
+    console.log(`Bot ${pjson.version} started…`);
   }
 }

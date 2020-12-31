@@ -1,7 +1,7 @@
 egt-vereinsbot
 ==============
 
-Vereinsbot für Elysium Gaming Tübingen e.V.
+Der Discord-Vereinsbot für Elysium Gaming Tübingen e.V. mit easyVerein-Anbindung.  
 
 # Usage
 ```sh-session

@@ -1,15 +1,17 @@
-import { keyBy } from 'lodash';
+import { keyBy, find } from 'lodash';
 import { getMembers } from '../../api';
 import config from './config';
 
 let membersMap: Map<string, Member> | null = null;
+let membersArr: Member[] | null = null;
 
-export const resolve = async (discordTag: string): Promise<Member | undefined> => {
+export const resolve = async (discordTag: string, exact: boolean = false): Promise<Member | undefined> => {
+  if (!discordTag) return undefined;
   if (!membersMap) {
-    const members: Member[] = await getMembers();
-    membersMap = new Map(Object.entries(keyBy(members, (m) => m.contactDetails.companyName)));
+    membersArr = await getMembers();
+    membersMap = new Map(Object.entries(keyBy(membersArr, (m) => m.contactDetails.companyName)));
   }
-  return membersMap.get(discordTag);
+  return exact ? membersMap.get(discordTag) : find(membersArr, (m) => m.contactDetails.companyName.toLowerCase() === discordTag.toLowerCase());
 }
 
 export const getMemberships = (member: Member): Membership[] =>

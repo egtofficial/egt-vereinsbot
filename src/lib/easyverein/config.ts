@@ -1,5 +1,6 @@
 export default {
-  'memberships': {
+  // internal IDs for membership types
+  memberships: {
     5710218: {
       'discordRoleId': -1,
       'short': 'active',
@@ -29,4 +30,6 @@ export default {
       'description': 'ehemaliges Mitglied',
     },
   },
+  // membership numbers of admins
+  admins: ['1', '2', '9'],
 }
