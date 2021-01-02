@@ -1,6 +1,6 @@
 import { keyBy, find } from 'lodash';
 import config from './config';
-import { Client } from 'easyverein';
+import { Client, Member } from 'easyverein';
 
 let membersMap: Map<string, Member> | null = null;
 let membersArr: Member[] | null = null;
