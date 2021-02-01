@@ -1,7 +1,7 @@
 import { Message } from 'discord.js'
 import { find, sample, words } from 'lodash'
 import { genericFallbackReplies, genericHelloReplies, genericHelloWords, prefix } from './constants'
-import { info } from './intents';
+import { info, post } from './intents';
 import { blue } from 'colors/safe';
 import { wait } from './lib/utils';
 
@@ -9,7 +9,7 @@ import { wait } from './lib/utils';
 export const processMessage = async (message: Message) => {
   const messageString = message.content.substr(prefix.length);
   const cmd = words(messageString)[0].toLowerCase();
-  const args = messageString.replace(cmd, '').trim();
+  const args = messageString.replace(cmd, '').trim() || '';
   console.log(blue(`Incoming command: ${cmd}`), args ? `=> ${args}` : '');
 
   if (genericHelloWords.includes(cmd.toLowerCase())) {
@@ -19,6 +19,14 @@ export const processMessage = async (message: Message) => {
 
   if (['whoami', 'info'].includes(cmd))
     return info(message, args);
+
+  if (['post']) {
+    const match = args.match(/^(\S+)\s(.*)/);
+    if (match) {
+      const parts = match.slice(1);
+      return post(message, parts[0], parts[1]);
+    }
+  }
 
   message.channel.send(sample(genericFallbackReplies) as string);
   return wait(2000).then(() => {

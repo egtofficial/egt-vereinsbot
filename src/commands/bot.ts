@@ -1,6 +1,6 @@
 import { Command, flags } from '@oclif/command'
-import { Client } from 'discord.js'
 import { prefix } from '../constants';
+import { client } from '../lib/discord';
 import { processMessage } from '../parser';
 const pjson = require('../../package.json');
 
@@ -15,9 +15,7 @@ export default class Roles extends Command {
     help: flags.help({ char: 'h' }),
   }
   async run() {
-    const client = new Client();
-    client.login(process.env.BOT_TOKEN);
-
+    client.login(process.env.BOT_TOKEN)
     client.on("message", function (message) {
       if (message.author.bot) return;
       if (!message.content.startsWith(prefix)) return;
