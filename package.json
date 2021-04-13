@@ -1,7 +1,7 @@
 {
   "name": "egt-vereinsbot",
   "description": "Vereinsbot für Elysium Gaming Tübingen e.V.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": {
     "name": "Frédéric Bolvin <frederic@bol.vin> (https://f-bit.software)"
   },
@@ -16,7 +16,7 @@
     "colors": "^1.4.0",
     "date-fns": "^2.16.1",
     "discord.js": "^12.5.1",
-    "easyverein": "^0.2.0",
+    "easyverein": "^0.2.2",
     "lodash": "^4.17.20",
     "tslib": "^2.1.0"
   },

@@ -83,6 +83,10 @@ export const info = async (message: Message, name?: string) => {
         })
         .then(() => {
           const membership = getMemberships(member)[0];
+          if (!membership) {
+            message.channel.send(`Das Mitglied ist seit dem ${formatDate(authorMember.joinDate)} ein Mitglied, die Mitgliedsgruppe ist mir jedoch unbekannt. 🤷‍♂️`);
+            return;
+          }
           if (membership.short === 'former')
             message.channel.send(`Das Mitglied ist am ${formatDate(member.joinDate)} beigetreten, aber ist in der Zwischenzeit ein ${membership.description}. 😭`);
           else
@@ -103,6 +107,10 @@ export const info = async (message: Message, name?: string) => {
     })
     .then(() => {
       const membership = getMemberships(authorMember)[0];
+      if (!membership) {
+        message.channel.send(`Du bist seit dem ${formatDate(authorMember.joinDate)} ein Mitglied. 🥳`);
+        return wait(4000);
+      }
       if (membership.short === 'former')
         message.channel.send(`Du bist am ${formatDate(authorMember.joinDate)} beigetreten, aber bist in der Zwischenzeit ein ${membership.description}. 😭`);
       else

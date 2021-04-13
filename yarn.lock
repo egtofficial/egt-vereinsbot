@@ -533,10 +533,10 @@ doctrine@0.7.2:
     esutils "^1.1.6"
     isarray "0.0.1"
 
-easyverein@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/easyverein/-/easyverein-0.2.0.tgz#5a3e83db28386d1deef61e9138d82444806571a7"
-  integrity sha512-hpclliTGZ3PZjFD3F8Tkik6efUcsqlR41rGT+HLo1Ab5YjwYQloQ9msrzULaMqEZfLT9nxSLcAA7vpdNbC72jg==
+easyverein@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/easyverein/-/easyverein-0.2.2.tgz#ccda28b5af1de41a3155cbc9ef4f0799e7ad210d"
+  integrity sha512-e7CS0whmSC9FeH773MN/UglvJyVhUUpf5AAHL1EH97QZBSCR4qjEojUKdfHd08Rd6n9s7hUkQYQTvTp5PHi/Ow==
   dependencies:
     "@types/node-fetch" "^2.5.7"
     node-fetch "^2.6.1"
