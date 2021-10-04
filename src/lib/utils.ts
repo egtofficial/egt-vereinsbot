@@ -7,6 +7,6 @@ export const formatDate = (date: string, format?: string) => dateFNsFormat(parse
 export const getDiscordTag = (user: User) => `${user.username}#${user.discriminator}`;
 export const wait = util.promisify(setTimeout);
 export const parseDiscordTag = (str: string) => {
-  const matches = /[A-Z |_\\/]+#[0-9]{4}/i.exec(str);
+  const matches = /[A-Z\. |_\\/]+#[0-9]{4}/i.exec(str);
   return matches ? matches[0] : null;
 }
